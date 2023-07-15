@@ -1,8 +1,8 @@
-const { insertUsersAndTweets } = require('./practices');
+const { join } = require('./practices');
 
 (async () => {
   try {
-    insertUsersAndTweets();
+    join();
   } catch (error) {
     console.log('======= error ======');
     console.log(error);

@@ -98,3 +98,23 @@ exports.groupBy = async () => {
 
   console.log(print(movies2));
 };
+
+exports.join = async () => {
+  const tweets = await Tweet.findAll({
+    attributes: ['tweet'],
+    include: {
+      model: User,
+      //   required: true,
+      // method 1
+      where: {
+        username: 'test2',
+      },
+    },
+    // method 2
+    // where: {
+    //   '$User.username$': 'test2',
+    // },
+  });
+
+  console.log(print(tweets));
+};
